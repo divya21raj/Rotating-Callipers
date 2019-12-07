@@ -3,9 +3,9 @@ package com.algos;
 import java.util.Objects;
 
 public class Point {
-    float x, y;
+    int x, y;
 
-    public Point(float x, float y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
