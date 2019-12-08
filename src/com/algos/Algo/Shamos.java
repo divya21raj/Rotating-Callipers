@@ -1,10 +1,13 @@
-package com.algos;
+package com.algos.Algo;
+
+import com.algos.Ds.Point;
+import com.algos.Ds.PointList;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.algos.Util.getArea;
-import static com.algos.Util.getDistance;
+import static com.algos.Algo.Util.getArea;
+import static com.algos.Algo.Util.getDistance;
 
 public class Shamos {
     static ArrayList<PointList<Point>> pairs = new ArrayList<>();
@@ -22,7 +25,7 @@ public class Shamos {
     }
 
 
-    ArrayList<PointList<Point>> getAllAntipodalPairs() {
+    public ArrayList<PointList<Point>> getAllAntipodalPairs() {
         Collections.reverse(points);
         for(Point point: points) System.out.println(point.id);
         pairs = new ArrayList<>();
@@ -54,7 +57,7 @@ public class Shamos {
         return pairs;
     }
 
-    static PointList<Point> getDiameterPoints(){
+    public static PointList<Point> getDiameterPoints(){
         double diameter = 0; PointList<Point> finalPair = new PointList<>();
         for(PointList<Point> pair: pairs){
             double distance = getDistance(pair.get(0), pair.get(1));

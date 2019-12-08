@@ -1,4 +1,7 @@
-package com.algos;
+package com.algos.Gui;
+
+import com.algos.Ds.Point;
+import com.algos.Ds.PointList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,9 +9,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import static com.algos.Shamos.getDiameterPoints;
+import static com.algos.Algo.Shamos.getDiameterPoints;
 
-class DrawingPanel extends JPanel
+public class DrawingPanel extends JPanel
         implements MouseListener, MouseMotionListener
 {
     private static final Dimension MIN_DIM = new Dimension(300, 300);
@@ -27,7 +30,7 @@ class DrawingPanel extends JPanel
 
     static PointList<Point> diameterPoints = getDiameterPoints();
 
-    DrawingPanel()
+    public DrawingPanel()
     {
         super();
         addMouseListener(this);

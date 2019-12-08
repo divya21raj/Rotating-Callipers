@@ -1,12 +1,16 @@
-package com.algos;
+package com.algos.Gui;
+
+import com.algos.Ds.Point;
+import com.algos.Ds.PointList;
+import com.algos.Algo.Shamos;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
-import static com.algos.DrawingPanel.*;
-import static com.algos.Shamos.getDiameterPoints;
+import static com.algos.Gui.DrawingPanel.*;
+import static com.algos.Algo.Shamos.getDiameterPoints;
 
 public class ControlPanel extends JPanel{
     Action clearAll = new ClearAction("Clear");
@@ -14,7 +18,7 @@ public class ControlPanel extends JPanel{
 
     DrawingPanel parentPanel;
 
-    ControlPanel(DrawingPanel d) {
+    public ControlPanel(DrawingPanel d) {
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
         this.setBackground(Color.lightGray);
 

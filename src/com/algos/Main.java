@@ -1,8 +1,10 @@
 package com.algos;
 
+import com.algos.Gui.ControlPanel;
+import com.algos.Gui.DrawingPanel;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Main {
 

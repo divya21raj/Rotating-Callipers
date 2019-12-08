@@ -1,4 +1,6 @@
-package com.algos;
+package com.algos.Algo;
+
+import com.algos.Ds.Point;
 
 public class Util {
     static float getArea(Point A, Point B, Point C) {

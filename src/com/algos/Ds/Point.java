@@ -1,10 +1,11 @@
-package com.algos;
+package com.algos.Ds;
 
 import java.util.Objects;
 
 public class Point {
-    int x, y;
-    int id;
+    public int x;
+    public int y;
+    public int id;
 
     public Point(int x, int y, int id) {
         this.x = x;

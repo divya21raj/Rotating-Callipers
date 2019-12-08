@@ -1,4 +1,4 @@
-package com.algos;
+package com.algos.Ds;
 
 import java.util.ArrayList;
 
