@@ -21,7 +21,7 @@ class DrawingPanel extends JPanel
     /**
      The 'dummy' point tracking the mouse.
      */
-    static final Point trackPoint = new Point(0,0);
+    static final Point trackPoint = new Point(0,0, 0);
 
     static PointList<Point> points = new PointList<>();
 
@@ -73,17 +73,17 @@ class DrawingPanel extends JPanel
                     points.clear();
                     polygonIsNowComplete = false;
                 }
-                points.add(new Point(x, y));
+                points.add(new Point(x, y, points.size()));
                 repaint();
                 break;
 
             case 2: // double-click
                 polygonIsNowComplete = true;
-                points.add(new Point(x, y));
+                /*points.add(new Point(x, y, points.size()));*/
                 repaint();
                 break;
 
-            default: // ignore anything else
+            default:
                 break;
         }
     }
@@ -110,9 +110,11 @@ class DrawingPanel extends JPanel
 
         g.setColor(Color.red);
         g.fillOval(x1, y1, 8, 8);
+        g.drawString(String.valueOf(p1.id), x1, y1);
 
         g.setColor(Color.blue);
         g.fillOval(x2, y2, 8, 8);
+        g.drawString(String.valueOf(p2.id), x2, y2);
     }
 
     private void drawLine(Graphics g, Point p1, Point p2, Color color) {

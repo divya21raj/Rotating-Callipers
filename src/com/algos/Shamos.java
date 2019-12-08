@@ -24,6 +24,7 @@ public class Shamos {
 
     ArrayList<PointList<Point>> getAllAntipodalPairs() {
         Collections.reverse(points);
+        for(Point point: points) System.out.println(point.id);
         pairs = new ArrayList<>();
         int i0 = points.size()-1, i = 1, j = i+1, j0 = 0;
         while(getArea(points.get(i), points.get(i+1), points.get(j+1)) >
@@ -33,7 +34,6 @@ public class Shamos {
         }
         while(j != i0){
             i++;
-            System.out.println(i + " " + j + " " + i0);
             yield(i, j ,pairs, points);
             while(j != i0 && getArea(points.get(i), points.get(i+1), points.get(j+1)) >
                     getArea(points.get(i), points.get(i+1), points.get(j))){
@@ -58,8 +58,17 @@ public class Shamos {
         double diameter = 0; PointList<Point> finalPair = new PointList<>();
         for(PointList<Point> pair: pairs){
             double distance = getDistance(pair.get(0), pair.get(1));
-            if(distance >diameter) diameter = distance;
-            finalPair = pair;
+            if(distance >diameter){
+                diameter = distance;
+                finalPair = pair;
+            }
+            pair.get(0).printId();
+            System.out.print(" : ");
+            pair.get(1).printId();
+            System.out.print(" - ");
+            System.out.print(distance);
+            System.out.print(" - ");
+            System.out.println(diameter);
         }
 
         return finalPair;

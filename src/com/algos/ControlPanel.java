@@ -31,12 +31,6 @@ public class ControlPanel extends JPanel{
         public void actionPerformed(ActionEvent e) {
             if(polygonIsNowComplete){
                 ArrayList<PointList<Point>> pairs = new Shamos(points).getAllAntipodalPairs();
-                for(PointList<Point> pair: pairs){
-                    pair.get(0).print();
-                    System.out.print(" : ");
-                    pair.get(1).print();
-                    System.out.println();
-                }
 
                 diameterPoints = getDiameterPoints();
                 drawDiameter = true;

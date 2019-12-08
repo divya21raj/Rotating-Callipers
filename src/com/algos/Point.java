@@ -4,16 +4,17 @@ import java.util.Objects;
 
 public class Point {
     int x, y;
+    int id;
 
-    public Point(int x, int y) {
+    public Point(int x, int y, int id) {
         this.x = x;
         this.y = y;
+        this.id = id;
     }
 
     public void print() {
         System.out.print(x + " " + y);
     }
-
 
 
     @Override
@@ -28,5 +29,9 @@ public class Point {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    public void printId() {
+        System.out.print(this.id);
     }
 }
